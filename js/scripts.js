@@ -1,35 +1,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // $(document).ready(function() {
 //     $("#status").click(function() {
 //     function rollDice() {
