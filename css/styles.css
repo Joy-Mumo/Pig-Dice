@@ -1,32 +1,6 @@
-/* .dice{
-    float:left;
-    width:50px;
-    background:#F5F5F5;
-    border:#999 1px solid;
-    padding:10px;
-    font-size:24px;
-    text-align:center;
-    margin:5px;
 
-}
-h2{
-    clear:left;
-}
-#style{
-    text-align: center;
-    padding: 0.75rem;
-
-  border-radius: 100px;
-  background-color: rgb(0, 211, 63);
-}
-.card{
-  float: center;
-}
-.row{
-    box-align: 
-} */
 .two{
-    background-color:peru;
+    background-color:mediumaquamarine;
 
 }
 
@@ -47,12 +21,12 @@ h2{
     
 }
 .b1{
-   background-image: url("https://github.com/Joy-Vivika/Pig-Dice/blob/gh-pages/images/unnamed.png");
+   background-color: aquamarine;
 }
 #last{
     background-color:mediumspringgreen; 
     border-radius: 30px;
     text-align: center;
     font-family: sans-serif;
-    height:2px;
+    padding: 0.75rem;
 }

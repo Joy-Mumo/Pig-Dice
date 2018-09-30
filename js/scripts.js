@@ -1,26 +1,91 @@
+// business-end
+var player1="";
+var player2="";
+var play=function(){
+  return Math.floor(6*Math.random())+1;
+}
+// created a player object with five properties
+function Player(turn) {
+  this.roll = 0;
+  this.current = 0;
+  this.totalscore = 0;
+  this.turn = turn;
+  this.playerName;
+}
+
+Player.prototype.rollone = function() {
+  if (this.roll === 1) {
+  this.current = 0;
+  text("Sorry " + this.playerName + ", you rolled a 1! Your turn is over!")
+  // this.changeturn();
+  } else {
+  this.current += this.roll;
+  }
+}
+Player.prototype.hold = function () {
+  this.totalscore += this.current;
+  this.current = 0;
+  // this.changeturn();
+  text(this.playerName + ", your turn is over,other player");
+}
+Player.prototype.winnerCheck = function () {
+  if (this.totalscore >= 100) {
+    text(this.playerName + " You are the winner!");
+  }
+}
 
 
 
-// $(document).ready(function() {
-//     $("#status").click(function() {
-//     function rollDice() {
-//     var d1=Math.ceil(Math.random()* 6)+ 1;
-//     var d2=Math.ceil(Math.random()* 6)+ 1;
-     
-//     var diceTotal = function(d1,d2){
-//         return (d1+ d2 );
-//         }
-        
-//         // var result = testResults(q1, q2 , q3,);
-        
-        
-//         //   document.getElementById("display").style.visibility="visible";
-//         //   document.getElementById("answer").innerHTML=" You got " +  result + " result. ";
-        
-        
-//         // }
 
-// // }
-// // var die1;
-// // die1=Math.ceil(Math.random()*6);
-// // document.textContent(die1);
+// User interface
+
+$(document).ready(function() {
+
+  $("button#start").click(function(event){
+    player1 = new Player(true);
+    player2 =  new Player(false);
+    $(".player-console").show();
+    $(".start-menu").hide();
+
+    var player1Name = $("#player1Name").val();
+    $("#player1Name").text(player1Name);
+
+    var player2Name = $("#player2Name").val();
+    $("#player2Name").text(player2Name);
+
+    player1.playerName=player1Name;
+    player2.playerName=player2Name;
+
+  });
+  
+  $("button#player1-roll").click(function(event){
+    player1.roll = play();
+    $("#die-roll-1").text(player1.roll);
+    player1.rollone();
+    $("#round-total-1").text(player1.current);
+  });
+
+  $("button#player2-roll").click(function(event){
+    player2.roll = play();
+    $("#die-roll-2").text(player2.roll);
+    player2.rollone();
+    $("#round-total-2").text(player2.current);
+  });
+
+  $("button#player1-hold").click(function(event){
+    player1.hold();
+    $("#total-score-1").text(player1.totalscore);
+    $("#round-total-1").empty();
+    $("#die-roll-1").empty();
+    player1.winnerCheck();
+  });
+
+  $("button#player2-hold").click(function(event){
+    player2.hold();
+    $("#total-score-2").text(player2.totalscore);
+    $("#round-total-2").empty();
+    $("#die-roll-2").empty();
+    player2.winnerCheck();
+  });
+
+});
