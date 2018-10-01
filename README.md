@@ -31,3 +31,9 @@ Unavailable
 
 ### Link to Live Site on Github Pages
 https://joy-vivika.github.io/Pig-Dice/
+
+### Cpyright And Licensing.
+MIT License
+
+Copyright (c) 2018 Joy Vivika
+
