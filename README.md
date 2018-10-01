@@ -8,7 +8,7 @@ Open link to program on a device connected to the interenet.Select three answers
 
 ### Behaviour Driven Development
 | User Interaction             |EXpected Outcome        |
-|..............................|........................|
+|------------------------------|------------------------|
 |Player presses start          |Function starts running |
 |Player presses roll           |Random number appears   |
 |Random number totals to 100   |winner is announced     |
